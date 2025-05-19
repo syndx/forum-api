@@ -207,6 +207,7 @@ describe('CommentRepositoryPostgres', () => {
         },
         date: '2025-05-07T11:49:06.063Z',
       });
+
       await CommentTableTestHelper.addComment({
         commentId: 'comment-234',
         ownerId: 'user-234',
@@ -236,6 +237,7 @@ describe('CommentRepositoryPostgres', () => {
           parents: null,
           content: 'Ini adalah Komentar 1',
           isDelete: false,
+          likeCount: 0,
         },
         {
           id: 'comment-234',
@@ -244,6 +246,7 @@ describe('CommentRepositoryPostgres', () => {
           parents: null,
           content: 'Ini adalah Komentar 2',
           isDelete: false,
+          likeCount: 0,
         },
       ]);
     });
