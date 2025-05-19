@@ -23,6 +23,7 @@ class GetThreadUseCase {
         replies: [],
         content: item.isDelete ? '**komentar telah dihapus**' : item.content,
         isDelete: item.isDelete,
+        likeCount: item.likeCount,
       };
       mappedData.push(comment);
     });

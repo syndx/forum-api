@@ -22,6 +22,7 @@ describe('GetThreadUseCase', () => {
         parents: null,
         content: 'ini adalah komentar pertama',
         isDelete: false,
+        likeCount: 0,
       },
       {
         id: 'comments-2',
@@ -30,6 +31,7 @@ describe('GetThreadUseCase', () => {
         parents: 'comments-1',
         content: 'ini adalah balasan komentar pertama',
         isDelete: false,
+        likeCount: 0,
       },
       {
         id: 'comments-3',
@@ -38,6 +40,7 @@ describe('GetThreadUseCase', () => {
         parents: null,
         content: 'ini adalah komentar kedua',
         isDelete: false,
+        likeCount: 0,
       },
       {
         id: 'comments-4',
@@ -46,6 +49,7 @@ describe('GetThreadUseCase', () => {
         parents: 'comments-1',
         content: 'ini adalah balasan komentar pertama lagi',
         isDelete: false,
+        likeCount: 0,
       },
     ];
 
@@ -96,6 +100,7 @@ describe('GetThreadUseCase', () => {
             },
           ],
           content: 'ini adalah komentar pertama',
+          likeCount: 0,
         },
         {
           id: 'comments-3',
@@ -103,6 +108,7 @@ describe('GetThreadUseCase', () => {
           date: '2025-05-07T07:46:20.905Z',
           replies: [],
           content: 'ini adalah komentar kedua',
+          likeCount: 0,
         },
       ],
     });
@@ -127,6 +133,7 @@ describe('GetThreadUseCase', () => {
         parents: null,
         content: 'ini adalah komentar pertama',
         isDelete: false,
+        likeCount: 0,
       },
       {
         id: 'comments-2',
@@ -135,6 +142,7 @@ describe('GetThreadUseCase', () => {
         parents: 'comments-1',
         content: 'ini adalah balasan komentar pertama',
         isDelete: false,
+        likeCount: 0,
       },
       {
         id: 'comments-3',
@@ -143,6 +151,7 @@ describe('GetThreadUseCase', () => {
         parents: null,
         content: 'ini adalah komentar kedua',
         isDelete: true,
+        likeCount: 0,
       },
       {
         id: 'comments-4',
@@ -151,6 +160,7 @@ describe('GetThreadUseCase', () => {
         parents: 'comments-1',
         content: 'ini adalah balasan komentar pertama lagi',
         isDelete: false,
+        likeCount: 0,
       },
     ];
 
@@ -201,6 +211,7 @@ describe('GetThreadUseCase', () => {
             },
           ],
           content: 'ini adalah komentar pertama',
+          likeCount: 0,
         },
         {
           id: 'comments-3',
@@ -208,6 +219,7 @@ describe('GetThreadUseCase', () => {
           date: '2025-05-07T07:46:20.905Z',
           replies: [],
           content: '**komentar telah dihapus**',
+          likeCount: 0,
         },
       ],
     });
@@ -232,6 +244,7 @@ describe('GetThreadUseCase', () => {
         parents: null,
         content: 'ini adalah komentar pertama',
         isDelete: false,
+        likeCount: 0,
       },
       {
         id: 'comments-2',
@@ -240,6 +253,7 @@ describe('GetThreadUseCase', () => {
         parents: 'comments-1',
         content: 'ini adalah balasan komentar pertama',
         isDelete: false,
+        likeCount: 0,
       },
       {
         id: 'comments-3',
@@ -248,6 +262,7 @@ describe('GetThreadUseCase', () => {
         parents: null,
         content: 'ini adalah komentar kedua',
         isDelete: false,
+        likeCount: 0,
       },
       {
         id: 'comments-4',
@@ -256,6 +271,7 @@ describe('GetThreadUseCase', () => {
         parents: 'comments-1',
         content: 'ini adalah balasan komentar pertama lagi',
         isDelete: true,
+        likeCount: 0,
       },
     ];
 
@@ -306,6 +322,7 @@ describe('GetThreadUseCase', () => {
             },
           ],
           content: 'ini adalah komentar pertama',
+          likeCount: 0,
         },
         {
           id: 'comments-3',
@@ -313,6 +330,7 @@ describe('GetThreadUseCase', () => {
           date: '2025-05-07T07:46:20.905Z',
           replies: [],
           content: 'ini adalah komentar kedua',
+          likeCount: 0,
         },
       ],
     });

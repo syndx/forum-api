@@ -37,7 +37,7 @@ describe('Like Comment use case', () => {
     const likeCommentUseCase = new LikeCommentUseCase({
       threadRepository: mockThreadRepository,
       commentRepository: mockCommentRepository,
-      LikeCommentRepository: mockLikeCommentRepository,
+      likeCommentRepository: mockLikeCommentRepository,
     });
 
     await expect(
@@ -66,7 +66,7 @@ describe('Like Comment use case', () => {
 
     mockLikeCommentRepository.checkCommentHasLike = jest
       .fn()
-      .mockImplementation(() => Promise.resolve());
+      .mockImplementation(() => Promise.resolve(false));
 
     mockLikeCommentRepository.addLike = jest
       .fn()
@@ -79,7 +79,7 @@ describe('Like Comment use case', () => {
     const likeCommentUseCase = new LikeCommentUseCase({
       threadRepository: mockThreadRepository,
       commentRepository: mockCommentRepository,
-      LikeCommentRepository: mockLikeCommentRepository,
+      likeCommentRepository: mockLikeCommentRepository,
     });
 
     await likeCommentUseCase.execute(useCasePayload);
@@ -92,15 +92,15 @@ describe('Like Comment use case', () => {
       useCasePayload.commentId
     );
 
-    expect(mockLikeCommentRepository.checkCommentHasLike).toBeCalledWith(
-      useCasePayload.owner,
-      useCasePayload.commentId
-    );
+    expect(mockLikeCommentRepository.checkCommentHasLike).toBeCalledWith({
+      owner: useCasePayload.owner,
+      commentId: useCasePayload.commentId,
+    });
 
-    expect(mockLikeCommentRepository.addLike).toBeCalledWith(
-      useCasePayload.owner,
-      useCasePayload.commentId
-    );
+    expect(mockLikeCommentRepository.addLike).toBeCalledWith({
+      owner: useCasePayload.owner,
+      commentId: useCasePayload.commentId,
+    });
 
     expect(mockLikeCommentRepository.removeLike).not.toBeCalled();
   });
@@ -126,7 +126,7 @@ describe('Like Comment use case', () => {
 
     mockLikeCommentRepository.checkCommentHasLike = jest
       .fn()
-      .mockImplementation(() => Promise.resolve());
+      .mockImplementation(() => Promise.resolve(true));
 
     mockLikeCommentRepository.addLike = jest
       .fn()
@@ -139,7 +139,7 @@ describe('Like Comment use case', () => {
     const likeCommentUseCase = new LikeCommentUseCase({
       threadRepository: mockThreadRepository,
       commentRepository: mockCommentRepository,
-      LikeCommentRepository: mockLikeCommentRepository,
+      likeCommentRepository: mockLikeCommentRepository,
     });
 
     await likeCommentUseCase.execute(useCasePayload);
@@ -152,16 +152,16 @@ describe('Like Comment use case', () => {
       useCasePayload.commentId
     );
 
-    expect(mockLikeCommentRepository.checkCommentHasLike).toBeCalledWith(
-      useCasePayload.owner,
-      useCasePayload.commentId
-    );
+    expect(mockLikeCommentRepository.checkCommentHasLike).toBeCalledWith({
+      owner: useCasePayload.owner,
+      commentId: useCasePayload.commentId,
+    });
 
     expect(mockLikeCommentRepository.addLike).not.toBeCalled();
 
-    expect(mockLikeCommentRepository.removeLike).toBeCalledWith(
-      useCasePayload.owner,
-      useCasePayload.commentId
-    );
+    expect(mockLikeCommentRepository.removeLike).toBeCalledWith({
+      owner: useCasePayload.owner,
+      commentId: useCasePayload.commentId,
+    });
   });
 });

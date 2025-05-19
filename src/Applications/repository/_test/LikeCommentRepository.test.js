@@ -12,6 +12,10 @@ describe('LikeCommentRepository interface', () => {
       'LIKE_COMMENT_REPOSITORY.METHOD_NOT_IMPLEMENTED'
     );
 
+    await expect(
+      likeCommentRepository.getLikeByCommentId('')
+    ).rejects.toThrowError('LIKE_COMMENT_REPOSITORY.METHOD_NOT_IMPLEMENTED');
+
     await expect(likeCommentRepository.removeLike('', '')).rejects.toThrowError(
       'LIKE_COMMENT_REPOSITORY.METHOD_NOT_IMPLEMENTED'
     );

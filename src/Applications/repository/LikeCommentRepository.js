@@ -7,6 +7,10 @@ class LikeCommentRepository {
     throw new Error('LIKE_COMMENT_REPOSITORY.METHOD_NOT_IMPLEMENTED');
   }
 
+  async getLikeByCommentId(commentId) {
+    throw new Error('LIKE_COMMENT_REPOSITORY.METHOD_NOT_IMPLEMENTED');
+  }
+
   async removeLike(owner, commentId) {
     throw new Error('LIKE_COMMENT_REPOSITORY.METHOD_NOT_IMPLEMENTED');
   }
